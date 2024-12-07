@@ -1,0 +1,17 @@
+name: 运行自动脚本
+
+on:
+  push:
+    branches: [ "opkona" ]
+  pull_request:
+    branches: [ "opkona" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: configure
+      run: ./build_kernel.sh
